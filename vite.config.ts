@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => ({
   base: mode === 'preview' ? './' : '/',
   build: mode === 'preview' ? { outDir: 'preview-dist' } : undefined,
   plugins: [react()],
+  server: {
+    allowedHosts: true,
+  },
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
